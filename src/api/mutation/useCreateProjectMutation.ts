@@ -1,8 +1,4 @@
-import {
-  UseMutationResult,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { UseMutationResult, useMutation } from "@tanstack/react-query";
 import IProject from "../interfaces/project";
 
 interface CreateProjectResponse {
@@ -14,7 +10,6 @@ const useCreateProjectMutation: () => UseMutationResult<
   null,
   IProject
 > = () => {
-  const queryClient = useQueryClient();
   return useMutation({
     mutationKey: ["createProjectMutation"],
     mutationFn: async (project) => {
